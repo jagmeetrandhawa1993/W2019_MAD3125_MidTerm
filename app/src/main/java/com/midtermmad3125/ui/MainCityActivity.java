@@ -1,8 +1,10 @@
 package com.midtermmad3125.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -34,6 +36,18 @@ public class MainCityActivity extends AppCompatActivity
             btnDisplay=findViewById(R.id.btnDisplay);
             ProcessData();
 
+            btnDisplay.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent i=new Intent(MainCityActivity.this,WeatherListActivity.class);
+                    i.putExtra("name","jagmeet");
+                    startActivity(i);
+
+                }
+            });
+
+
 
 
         }
@@ -56,6 +70,7 @@ public class MainCityActivity extends AppCompatActivity
                 e.printStackTrace();
             }
         }
+
 
 
 
