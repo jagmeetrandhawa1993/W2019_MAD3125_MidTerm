@@ -66,9 +66,9 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.StudentH
 
 
 
-                menuItemHolder.date.setText(menuItem.getid());
-                menuItemHolder.min.setText(menuItem.getSname());
-                menuItemHolder.max.setText(menuItem.getGender());
+               // menuItemHolder.date.setText(menuItem.getid());
+              //  menuItemHolder.min.setText(menuItem.textViewmin());
+               // menuItemHolder.max.setText(menuItem.getGender());
 
         }
     }
