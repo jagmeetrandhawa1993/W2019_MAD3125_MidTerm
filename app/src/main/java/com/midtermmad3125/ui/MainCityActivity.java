@@ -34,7 +34,7 @@ public class MainCityActivity extends AppCompatActivity
             btnDisplay=findViewById(R.id.btnDisplay);
             ProcessData();
 
-            
+
 
         }
         public void ProcessData (){
