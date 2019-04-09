@@ -1,6 +1,7 @@
 package com.midtermmad3125.utils;
 
 import android.content.Context;
+import android.text.format.DateFormat;
 import android.util.Log;
 
 import com.midtermmad3125.city;
@@ -13,7 +14,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Iterator;
+import java.util.Locale;
 
 public class ReadJSONUtils {
     private ArrayList<city> cityDetails;
@@ -33,6 +36,16 @@ public class ReadJSONUtils {
             return null;
         }
         return jsonString;
+    }
+
+    public static String getDateFromTimeStamp(long time)
+    {
+        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+        cal.setTimeInMillis(time * 1000L);
+        String date = DateFormat.format("EEEE", cal).toString();
+        date += "\n" + DateFormat.format("dd MMM yyyy", cal).toString();
+        date += "\n" + DateFormat.format("hh:mm a", cal).toString();
+        return date;
     }
 
 
