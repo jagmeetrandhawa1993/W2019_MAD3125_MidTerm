@@ -35,46 +35,5 @@ public class ReadJSONUtils {
         return jsonString;
     }
 
-    private void processJSON() {
-        String js = loadJSONFromAsset();
-        if (js != null) {
-            // Log.d("json",js);
-            try {
-                JSONArray mJSONArray = new JSONArray(js);
-                cityDetails = new ArrayList<>();
-                for (int i = 0; i < mJSONArray.length(); i++) {
 
-                    JSONObject mJSONObj = mJSONArray.getJSONObject(i);
-                    //  Log.d("mjson", mJSONObj.toString());
-                    if (mJSONObj.has("sid")) {
-                        String name = mJSONObj.getString("name");
-                        String longitude = mJSONObj.getString("longitude");
-                        String latitude = mJSONObj.getString("latitude");
-                        String population = mJSONObj.getString("population");
-                        Log.d("mjson_name", String.valueOf(name));
-                        Log.d("mjson_longitude", String.valueOf(longitude));
-                        Log.d("mjson_latitude", String.valueOf(latitude));
-                        Log.d("mjson_population", String.valueOf(population));
-                        cityDetails.add(new city(String.valueOf(name), String.valueOf(longitude), String.valueOf(latitude), String.valueOf(population)));
-
-
-                        for (city str : cityDetails) {
-                            System.out.println(str.getCity());
-                            // System.out.println(str.getS());
-
-
-                            ;
-                            Iterator<city> it = cityDetails.iterator();
-                            while (it.hasNext()) {
-                                System.out.println(it.next().getCity());
-                            }
-                        }
-                    }
-                }
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 }

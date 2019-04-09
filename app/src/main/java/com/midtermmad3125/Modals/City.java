@@ -4,7 +4,8 @@ public class City {
 
     private Integer id;
     private String name;
-    private Coord coord;
+    private double latitude;
+    private double longitude;
     private String country;
     private Integer population;
 
@@ -24,12 +25,20 @@ public class City {
         this.name = name;
     }
 
-    public Coord getCoord() {
-        return coord;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public void setCoord(Coord coord) {
-        this.coord = coord;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public String getCountry() {
@@ -46,5 +55,17 @@ public class City {
 
     public void setPopulation(Integer population) {
         this.population = population;
+    }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", country='" + country + '\'' +
+                ", population=" + population +
+                '}';
     }
 }
